@@ -1,11 +1,11 @@
 const { ClarifaiStub, grpc } = require("clarifai-nodejs-grpc");
 
 // Your PAT (Personal Access Token) can be found in the portal under Authentification
-const PAT = '7d427ad8f2854e63962faeb2f259ac39';
+const PAT = process.env.CLARIFAI_PAT;
 // Specify the correct user_id/app_id pairings
 // Since you're making inferences outside your app's scope
-const USER_ID = 'delat24';       
-const APP_ID = 'my-first-application';
+const USER_ID = process.env.CLARIFAI_USERID;       
+const APP_ID = process.env.CLARIFAI_APPID;
 // Change these to whatever model and image URL you want to use
 const MODEL_ID = 'face-detection';
 //const IMAGE_URL = this.state.input;
