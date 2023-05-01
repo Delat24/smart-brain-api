@@ -22,9 +22,7 @@ const db = knex({
 const app = express();
 
 app.use(bodyParser.json());
-app.use(cors({
-  origin: 'https://smartbrain-app.herokuapp.com/',
-}));
+app.use(cors());
 
 app.get('/', (req, res) => { res.send('success') });
 app.post('/signin', signin.handleSignin(db, bcrypt));  // Brings the (req, res) from the above get line
